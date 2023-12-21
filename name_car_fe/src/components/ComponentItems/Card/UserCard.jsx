@@ -74,7 +74,8 @@ const UserCard = ({
       <Card sx={{ width: 250, margin: "1rem" }} key={index}>
         <CardMedia
           sx={{ height: 140 }}
-          image={`http://localhost:8000/${image_option}`}
+          // image={`http://localhost:8000/${image_option}`}
+          image={`https://namecardsproject-bb7cb61d1b56.herokuapp.com/${image_option}`}
           title={image_option}
         />
         <CardContent
