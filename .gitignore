@@ -1,0 +1,12 @@
+#basic
+venv
+
+#Front-End
+name_car_fe/node_modules
+scripts
+
+#Django
+name_card_project/name_card_project/__pycache__
+name_card_project/user/__pycache__
+name_card_project/frontend/__pycache__
+name_card_project/namecards/__pycache__
