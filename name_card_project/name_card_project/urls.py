@@ -26,8 +26,8 @@ urlpatterns = [
     path('api-namecards/', include('namecards.urls')),
     path('', frontend_views.index)
 ]
-urlpatterns += static(settings.MEDIA_URL,
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,
                           document_root=settings.MEDIA_ROOT)
 
 urlpatterns += [re_path(r"^.*", frontend_views.index)]
-
