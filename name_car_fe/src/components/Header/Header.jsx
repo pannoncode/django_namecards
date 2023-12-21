@@ -89,13 +89,36 @@ const Header = (props) => {
       </Typography>
       <Divider />
       <List>
-        <ListItem key={"homescreen"} disablePadding>
-          <ListItemButton sx={{ textAlign: "center" }}>
-            <ListItemText primary={"Kezdőoldal"} />
-          </ListItemButton>
-        </ListItem>
+        {userAuth || userIsAuth ? (
+          <ListItem key={"homescreen"} disablePadding>
+            <ListItemButton
+              sx={{ textAlign: "center" }}
+              component={Link}
+              to="/home"
+            >
+              <ListItemText primary={"Kezdőoldal"} />
+            </ListItemButton>
+          </ListItem>
+        ) : (
+          ""
+        )}
+
+        {userAuth || userIsAuth ? (
+          <ListItem key={"namecards"} disablePadding>
+            <ListItemButton
+              sx={{ textAlign: "center" }}
+              component={Link}
+              to="/cards"
+            >
+              <ListItemText primary={"Névjegykártyák"} />
+            </ListItemButton>
+          </ListItem>
+        ) : (
+          ""
+        )}
+
         {/* Bejelentkezés / Kijelentkezés */}
-        {userAuth ? logOutNavItem[1] : loginNavItem[1]}
+        {userAuth || userIsAuth ? logOutNavItem[1] : loginNavItem[1]}
       </List>
     </Box>
   );
