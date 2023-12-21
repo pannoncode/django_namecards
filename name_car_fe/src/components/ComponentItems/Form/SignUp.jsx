@@ -37,7 +37,7 @@ const SignUp = () => {
     axios
       .post("api/sign-up/", userData)
       .then((res) => {
-        console.log(res);
+        navigate("/login");
       })
       .catch((err) => {
         console.log(err);
